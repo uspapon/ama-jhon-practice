@@ -14,9 +14,30 @@ const Shop = () => {
     }, [])
 
     useEffect(() => {
+        // console.log("products",products);
         const storedCart = getShoppingCart();
-        console.log(storedCart);
-    },[])
+        const savedCart = [];
+
+        // step 1: get id
+        for(const id in storedCart){
+            // console.log(id);
+
+        // step 2: get the product using id
+            const savedLocalProductFindingInProductCatalog = products.find(product => product.id === id )
+        // step 3: get the product qty of product
+           if(savedLocalProductFindingInProductCatalog){
+               
+               const quantity = storedCart[id];
+               savedLocalProductFindingInProductCatalog.quantity = quantity; //here we are updating product quantity into the product catalogue 
+        // step 4: add the added product to the saved cart found in local storage
+               savedCart.push(savedLocalProductFindingInProductCatalog);
+           }
+        }
+
+        // step 5: set the cart
+        setCart(savedCart);
+
+    },[products])  // look back ref module 51, vedio 5 timestamp:08 min 18sec
 
     const handleAddToCart = (product) => {
         const newCart = [...cart, product];
