@@ -7,3 +7,17 @@
 
 }
 
+.btn-clear-cart {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: 10px auto;
+    border-radius: 4px;
+    background-color: #ff3030;
+    color: white;
+    font-size: 21px;
+    height: 56px;
+    
+
+}

@@ -14,7 +14,7 @@ const cartProductsLoader = async() => {
         
         if(mirrorProductOfLocalStorageProduct){
 
-            const quantity = savedCart[id];
+            const quantity = storedCart[id];
             mirrorProductOfLocalStorageProduct.quantity = quantity;  // jsut updating the quantity field of the mirrorProduct according local storage quantity. 
             savedCart.push(mirrorProductOfLocalStorageProduct);
         }
